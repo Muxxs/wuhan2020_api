@@ -17,4 +17,4 @@ data = {
             'links_to_pic': 0,
             'announce_type': 0
         }
-        ```
+```
