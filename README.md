@@ -5,6 +5,7 @@ wuhan2020数据库 API接口
 基于Flask
 提交json格式：
 
+```
 data = {
             'province': "",
             'city': '0',
@@ -16,3 +17,4 @@ data = {
             'links_to_pic': 0,
             'announce_type': 0
         }
+        ```
