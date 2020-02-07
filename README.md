@@ -7,7 +7,7 @@ version 0.0.1
 
 ### 提交数据
 
-> POST http://152.136.160.189/api/add
+> POST http://wuhan2020.muxxs.com/api/add
 
 | 字段          | 说明     |
 | ------------- | -------- |
@@ -43,11 +43,11 @@ version 0.0.1
 
 #### 通过城市获取数据
 
->GET http://152.136.160.189/api/read?city=<城市名>
+>GET http://wuhan2020.muxxs.com/api/read?city=<城市名>
 
 例如
 
-GET http://152.136.160.189/api/read?city=test
+GET http://wuhan2020.muxxs.com/api/read?city=test
 
 ```json
 {
