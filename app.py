@@ -7,5 +7,5 @@ app.register_blueprint(readCtl)
 app.register_blueprint(writeCtl)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0.0",port="80")
+    app.run(host="0.0.0.0",port="80")
 
