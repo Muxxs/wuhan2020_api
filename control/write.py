@@ -9,3 +9,4 @@ write = Blueprint('write', __name__)
 def index():
     insert(createArchive(request.json))
     return jsonify(SuccessResp(None))
+
