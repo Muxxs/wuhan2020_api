@@ -7,16 +7,16 @@ wuhan2020数据库 API接口
 
 ```
 data = {
-            'province': "",
-            'city': '0',
-            'publish_time': '00:00:00',
-            'publish_date': 0,
-            'title': 0,
-            'content': 0,
-            'link': 0,
-            'links_to_pic': 0,
-            'announce_type': 0
-        }
+    'province': "",
+    'city': '0',
+    'publish_time': '00:00:00',
+    'publish_date': 0,
+    'title': 0,
+    'content': 0,
+    'link': 0,
+    'links_to_pic': 0,
+    'announce_type': 0
+    }
 ```
 
 Post的方法在postman.py里 把变量放进去就好 key是密码，key不对上传会失败

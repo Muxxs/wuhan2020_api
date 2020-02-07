@@ -4,9 +4,9 @@ import pymysql.cursors
 import os
 
 def GetEnvPassword():
-    if os.getenv("PWD") == None:
+    if os.getenv("PASSWORD") == None:
         return "password"
-    return os.getenv("PWD")
+    return os.getenv("PASSWORD")
 
 def connect()->pymysql.Connection:
    return pymysql.connect(

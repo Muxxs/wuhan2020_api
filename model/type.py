@@ -14,6 +14,7 @@ class Archive:
     def toDict(self) -> dict:
         return {
             "province": self.province,
+            "city": self.city,
             "publish_time": self.publish_time, 
             "publish_date": self.publish_date,
             "title": self.title,
@@ -28,16 +29,19 @@ class Response:
         self.code = code
         self.message = msg
         self.data = data
-
+    
+    def toDict(self):
+        return {"code": self.code, "message": self.message, "data": self.data}     
 
 def FailResp():
-    return Response(code=-1, msg="发生错误")
+    return Response(code=-1, msg="发生错误").toDict()
 
 def SuccessResp(data):
-    return Response(code=0, msg="成功", data=data)
+    return Response(code=0, msg="成功", data=data).toDict()
 
 def createArchive(data:dict)->Archive:
     result = Archive()
+    result.city = data.get("city", "0")
     result.province = data.get("province", "")
     result.publish_time = data.get("publish_time",'00:00:00')
     result.publish_date = data.get("publish_date", "0000-00-00")

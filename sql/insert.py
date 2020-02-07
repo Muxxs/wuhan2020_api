@@ -7,7 +7,7 @@ connection = connect()
 def insert(data: Archive):
     with connection.cursor() as cursor:
         # Create a new record
-        sql = "INSERT INTO `archive` \
+        sql = "INSERT INTO `archives` \
             (`province`,`city`,`publish_time`,`publish_date`,`title`,`content`,`link`,`links_to_pic`,`announce_type`) \
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
         
