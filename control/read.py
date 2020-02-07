@@ -5,7 +5,7 @@ from sql.select import select
 
 read = Blueprint('read', __name__)
 
-@read.route("/api/read/<str:city>", methods=['GET'])
+@read.route("/api/read/<city>", methods=['GET'])
 def index(city=""):
     if city == "":
         return jsonify(FailResp())
