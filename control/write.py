@@ -8,4 +8,4 @@ write = Blueprint('write', __name__)
 @write.route('/api/write', methods=['POST'])
 def index():
     insert(createArchive(request.json))
-    return jsonify(SuccessResp())
+    return jsonify(SuccessResp(None))
