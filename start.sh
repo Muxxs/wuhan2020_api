@@ -15,5 +15,5 @@
 #)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 read -p "Enter database password: " password
-export PWD=$password
+export PASSWORD=$password
 (python3 ./app.py > /dev/null 2>&1 &)
