@@ -6,9 +6,9 @@ connection = connect()
 def exist(title)->bool:
     result = False
     with connection.cursor() as cursor:
-        sql = "SELECT IF(EXISTS(SELECT `id` FROM archives WHERE city = %s),  1, 0)"
+        sql = "SELECT IF(EXISTS(SELECT `id` FROM archives WHERE title = %s),  1, 0)"
         cursor.execute(sql,(title))
-        if cursor.fetchone()[0] == 1:
+        if cursor.fetchone()[0] != 0:
             result = True
     return result
 

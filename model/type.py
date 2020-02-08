@@ -41,6 +41,8 @@ def SuccessResp(data):
 
 def createArchive(data:dict)->Archive:
     result = Archive()
+    if type(data).__name__  != "dict":
+        return result
     result.city = data.get("city", "0")
     result.province = data.get("province", "")
     result.publish_time = data.get("publish_time",'00:00:00')
