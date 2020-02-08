@@ -16,4 +16,5 @@
 
 read -p "Enter database password: " password
 export PASSWORD=$password
+#python3 ./app.py
 (python3 ./app.py > log.txt 2>&1 &)
