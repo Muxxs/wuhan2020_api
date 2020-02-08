@@ -33,11 +33,11 @@ class Response:
     def toDict(self):
         return {"code": self.code, "message": self.message, "data": self.data}     
 
-def FailResp():
-    return Response(code=-1, msg="发生错误").toDict()
+def FailResp(msg="errors"):
+    return Response(code=-1, msg=msg).toDict()
 
 def SuccessResp(data):
-    return Response(code=0, msg="成功", data=data).toDict()
+    return Response(code=0, msg="success", data=data).toDict()
 
 def createArchive(data:dict)->Archive:
     result = Archive()

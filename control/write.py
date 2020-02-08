@@ -5,8 +5,9 @@ from sql.insert import insert
 
 write = Blueprint('write', __name__)
 
-@write.route('/api/write', methods=['POST'])
+@write.route('/api/add', methods=['POST'])
 def index():
-    insert(createArchive(request.json))
+    if not insert(createArchive(request.json)):
+        return jsonify(FailResp("existed or errors"))
     return jsonify(SuccessResp(None))
 
