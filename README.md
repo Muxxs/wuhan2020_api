@@ -21,20 +21,36 @@ version 0.0.1
 | publish_time  | 发布时间 |
 | title         | 标题     |
 
-例如
+#### 使用python3提交数据
 
-```json
-{
-    "announce_type": "0",
-    "city": "test",
-    "content": "ttttttttttttttttttttt",
-    "link": "http://test.test",
-    "links_to_pic": "teeeeeeessst",
-    "province": "test",
-    "publish_date": "0000-00-00",
-    "publish_time": "00:00:00",
-    "title": "test"
+> title重复会被判断为已存在
+
+```python
+import json
+from urllib import parse, request
+
+headers = {'Content-Type': 'application/json'}
+
+data = {
+    'province': "test",
+    'city': 'test',
+    'publish_time': '00:00:00',
+    'publish_date': '0',
+    'title': 'teeeeeeeeeee',
+    'content': "测试测试测试",
+    'link': "http://wsjkw.hebei.gov.cn/content/content_45/395747.whtml",
+    'links_to_pic': '0',
+    'announce_type': 0
 }
+
+req = request.Request(
+    url="http://152.136.160.189/api/add", 
+    headers=headers,
+    data=json.dumps(data, ensure_ascii=False).encode("UTF-8")
+)
+
+res = request.urlopen(req)
+print(res.read().decode("utf-8"))
 ```
 
 
