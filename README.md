@@ -27,7 +27,7 @@ version 0.0.1
 
 ```python
 import json
-from urllib import parse, request
+from urllib import request
 
 headers = {'Content-Type': 'application/json'}
 
