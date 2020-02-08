@@ -12,7 +12,7 @@ def connect()->pymysql.Connection:
    return pymysql.connect(
         host='localhost',
         user='root',
-        password = "wuhan2020",
+        password = GetEnvPassword(),
         db='db',
         charset='utf8mb4'
     )
