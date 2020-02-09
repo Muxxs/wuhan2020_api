@@ -14,7 +14,16 @@
 #   PRIMARY KEY ( `id` )
 #)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+#CREATE TABLE `logs`(
+#   `id` INT UNSIGNED AUTO_INCREMENT,
+#   `time` VARCHAR(255),
+#   `uploader` VARCHAR(255),
+#   `province` VARCHAR(255),
+#   `city` VARCHAR(255),
+#   PRIMARY KEY ( `id` )
+#)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 read -p "Enter database password: " password
 export PASSWORD=$password
 #python3 ./app.py
-(python3 ./app.py > log.txt 2>&1 &)
+(python3 ./app.py 1>>./var/access.log 2>&1 &)

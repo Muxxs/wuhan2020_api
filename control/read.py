@@ -1,7 +1,7 @@
 #coding=utf-8
 from flask import Blueprint, jsonify, request
 from model.type import FailResp, SuccessResp
-from sql.select import select
+from db.select import select
 
 read = Blueprint('read', __name__)
 

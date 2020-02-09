@@ -53,3 +53,17 @@ def createArchive(data:dict)->Archive:
     result.links_to_pic = data.get("links_to_pic", "")
     result.announce_type = data.get("announce_type", "")
     return result    
+
+class SubLog:
+    def __init__(self, ip="", time="", uploader="", province="", city=""):
+        self.ip = ip
+        self.time = time
+        self.uploader = uploader
+        self.province = province
+        self.city = city
+    
+    def toDict(self):
+        return {'ip':self.ip, 'time':self.time, 'uploader': self.uploader, 'province': self.province,'city': self.city}
+    
+    def toString(self):
+        return f"{self.ip} {self.time} {self.uploader} {self.province} {self.city}\n"
