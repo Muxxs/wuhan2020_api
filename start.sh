@@ -16,6 +16,7 @@
 
 #CREATE TABLE `logs`(
 #   `id` INT UNSIGNED AUTO_INCREMENT,
+#   `ip` VARCHAR(255),
 #   `time` VARCHAR(255),
 #   `uploader` VARCHAR(255),
 #   `province` VARCHAR(255),
@@ -26,4 +27,4 @@
 read -p "Enter database password: " password
 export PASSWORD=$password
 #python3 ./app.py
-(python3 ./app.py 1>>./var/access.log 2>&1 &)
+(python3 ./app.py 1>./var/log/access.log 2>&1 &)

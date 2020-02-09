@@ -17,7 +17,7 @@ def index():
         return jsonify(FailResp("existed or errors"))
     # 提交日志
     logInsert(
-        subLog(
+        SubLog(
             ip = request.remote_addr,
             time = datetime.datetime.now().strftime("%Y.%m.%d-%H:%M:%S"),
             uploader = upload.get("uploader", "unknown"),
