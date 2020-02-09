@@ -13,7 +13,9 @@ def logInsert(log: SubLog):
         connection.commit()
 
 def seekByTime(limit: int):
+    result = None
     with connection.cursor(DictCursor) as cursor:
         sql = "SELECT `city`, `ip`, `province`, `time`, `uploader` FROM logs order by id desc limit %s"
         cursor.execute(sql,(limit))
-        return cursor.fetchall()
+        result = cursor.fetchall()
+    return result
