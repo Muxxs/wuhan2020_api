@@ -85,3 +85,7 @@ GET http://wuhan2020.muxxs.com/api/read?city=test
 }
 ```
 
+
+
+Post的方法在postman.py里 把变量放进去就好 key是密码，key不对上传会失败
+
