@@ -33,14 +33,16 @@ class Response:
     def toDict(self):
         return {"code": self.code, "message": self.message, "data": self.data}     
 
-def FailResp():
-    return Response(code=-1, msg="发生错误").toDict()
+def FailResp(msg="errors"):
+    return Response(code=-1, msg=msg).toDict()
 
 def SuccessResp(data):
-    return Response(code=0, msg="成功", data=data).toDict()
+    return Response(code=0, msg="success", data=data).toDict()
 
 def createArchive(data:dict)->Archive:
     result = Archive()
+    if type(data).__name__  != "dict":
+        return result
     result.city = data.get("city", "0")
     result.province = data.get("province", "")
     result.publish_time = data.get("publish_time",'00:00:00')
@@ -51,3 +53,17 @@ def createArchive(data:dict)->Archive:
     result.links_to_pic = data.get("links_to_pic", "")
     result.announce_type = data.get("announce_type", "")
     return result    
+
+class SubLog:
+    def __init__(self, ip="", time="", uploader="", province="", city=""):
+        self.ip = ip
+        self.time = time
+        self.uploader = uploader
+        self.province = province
+        self.city = city
+    
+    def toDict(self):
+        return {'ip':self.ip, 'time':self.time, 'uploader': self.uploader, 'province': self.province,'city': self.city}
+    
+    def toString(self):
+        return f"{self.ip} {self.time} {self.uploader} {self.province} {self.city}\n"
